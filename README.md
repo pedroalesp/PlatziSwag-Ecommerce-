@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <!-- AUTO-GENERATED-CONTENT:START (STARTER) -->
 <p align="center">
   <a href="https://www.gatsbyjs.com">
@@ -97,3 +98,7 @@ Looking for more guidance? Full documentation for Gatsby lives [on the website](
 Gatsby Cloud is an end-to-end cloud platform specifically built for the Gatsby framework that combines a modern developer experience with an optimized, global edge network.
 
 <!-- AUTO-GENERATED-CONTENT:END -->
+=======
+# PlatziSwag-Ecommerce-
+This is a project in wich I use Gatsby for make an ecommerce plataform, SEO friendly and ultra speed
+>>>>>>> 1e5ad626b268c5db414f78b4e3b24065732713fe
