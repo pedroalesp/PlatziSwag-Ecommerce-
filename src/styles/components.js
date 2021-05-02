@@ -365,6 +365,21 @@ export const SizeButton = styled.button`
   }
 `
 
+export const ColorButton = styled.button`
+  padding: calc(0.4rem + 1px);
+  background-color: transparent;
+  border: 2px solid rgba(0, 0, 0, 0.1);
+  color: #272727;
+  opacity: ${({ unavailable }) => (unavailable ? 0.4 : 1)};
+  transition: 0.4s all ease;
+  &:focus {
+    outline: none;
+  }
+  &:hover {
+    transform: scale(1.2);
+  }
+`
+
 export const QtyButton = styled.button`
   padding: 0.4rem;
   background-color: transparent;
@@ -406,6 +421,18 @@ export const SizeSelect = styled.div`
     border: 2px solid rgba(0, 0, 0, 0.3);
   }
 `
+export const ColorSelect = styled.div`
+  display: grid;
+  width: 10rem;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 8px;
+  font-size: 0.8rem;
+  margin-top: 0.6rem;
+  button:nth-child(${props => props.selected}) {
+    border: 2px solid rgba(0, 0, 0, 0.3);
+  }
+`
+
 export const Button = styled.button`
   cursor: pointer;
   background-color: ${({ type }) =>

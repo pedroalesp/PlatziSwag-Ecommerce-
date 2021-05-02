@@ -14,6 +14,7 @@ exports.createPages = async ({graphql, actions}) => {
                   description
                   img
                   wear
+                  color
                 }
                 name
               }
