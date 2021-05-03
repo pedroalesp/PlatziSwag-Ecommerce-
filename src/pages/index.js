@@ -1,7 +1,7 @@
 import * as React from "react"
 import {graphql, useStaticQuery } from "gatsby"
 import {Jumbo} from "../components/Jumbo"
-import SEO from "../components/seo"
+import Seo from "../components/seo"
 import {Products} from '../components/Products'
 
 const IndexPage = () => {
@@ -39,7 +39,7 @@ const IndexPage = () => {
   return (
   <>
     {console.log(data)}
-    <SEO title="Home" />
+    <Seo title="Home" />
     <Jumbo description={data.allSite.edges[0].node.siteMetadata.description}/>
     <Products products={data.allStripePrice.edges} />
   </>

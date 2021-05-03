@@ -1,13 +1,13 @@
 import React from 'react'
 import {Link} from 'gatsby'
 
-import SEO from "../components/seo"
+import Seo from "../components/seo"
 import {Purchase, Button} from '../styles/components'
 
  const purchaseError = () =>  {
     return (
     <>
-                 <SEO title='Purchase Error'/> 
+                 <Seo title='Purchase Error'/> 
         <Purchase>
             <h2>Sorry! Your purchase can't being complete <span role='img' aria-label='emoji'>😥</span></h2>
                 <p>Seems like an error ocurred in the process

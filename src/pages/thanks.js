@@ -1,14 +1,14 @@
 import React from 'react'
 import {Link} from 'gatsby'
 
-import SEO from "../components/seo"
+import Seo from "../components/seo"
 
 import {Purchase, Button} from '../styles/components'
 
  const thanks = () =>  {
     return (
         <>
-            <SEO title='Successfull Purchase'/> 
+            <Seo title='Successfull Purchase'/> 
              <Purchase>
             <h2>Successfull Purchase!</h2>
             <p>Hope you enjoy your products, wear it  with proud 
