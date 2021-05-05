@@ -8,6 +8,7 @@ const Cart = () => {
 
     const {cart} = useContext(CartContext)
     const [total, setTotal] = useState(0)
+    const [stripe, setStripe] = useState()
 
     const getTotal = () => (
        setTotal(
@@ -16,8 +17,24 @@ const Cart = () => {
     )
 
     useEffect( () => {
+        setStripe(window.Stripe(process.env.STRIPE_PK))
         getTotal()
     }, [] )
+
+    const handleSubmit = async (e) => {
+        e.preventDefault()
+
+        const {error} = await stripe.redirectToCheckout({
+            lineItems: cart.map( ({sku, quantity}) => ({ price: sku, quantity}) ),
+            mode: 'payment',
+            successUrl: process.env.SUCCESS_REDIRECT,
+            cancelUrl: process.env.CANCEL_URL
+        })
+
+        if (error) {
+            throw error 
+        }
+    } 
 
     return (
         <StyledCart>
@@ -57,7 +74,7 @@ const Cart = () => {
                 <Link>
                     <Button type='outline' >Go back</Button>
                 </Link>
-                    <Button>Purchase</Button>
+                    <Button onClick={handleSubmit} disabled={cart.length === 0} >Purchase</Button>
                 </div>
             </nav>
         </StyledCart>

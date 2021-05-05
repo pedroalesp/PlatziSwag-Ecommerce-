@@ -8,7 +8,7 @@ exports.createPages = async ({graphql, actions}) => {
           edges {
             node {
               id
-              unit_amount
+             unit_amount
               product {
                 metadata {
                   description
