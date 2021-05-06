@@ -28,11 +28,11 @@ const Cart = () => {
             lineItems: cart.map( ({sku, quantity}) => ({ price: sku, quantity}) ),
             mode: 'payment',
             successUrl: process.env.SUCCESS_REDIRECT,
-            cancelUrl: process.env.CANCEL_URL
+            cancelUrl: process.env.CANCEL_REDIRECT
         })
 
         if (error) {
-            throw error 
+            throw new Error(error.message) 
         }
     } 
 
@@ -67,6 +67,7 @@ const Cart = () => {
                 </tbody>
             </table>
             <nav>
+
                 <div>
                     <h3>Total: USD {priceFormat(total)}</h3>
                 </div>

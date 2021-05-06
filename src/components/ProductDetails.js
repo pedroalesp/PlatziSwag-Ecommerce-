@@ -16,7 +16,7 @@ import {
     StyledProductDetail
 } from '../styles/components'
 
-const ProductDetails = ({unit_amount, sku: id, product: {metadata, name}}) => {
+const ProductDetails = ({unit_amount, id, product: {metadata, name}}) => {
     
     const formatedPrice = priceFormat(unit_amount)
     const [size, setSize] = useState(2)
